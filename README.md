@@ -1,5 +1,5 @@
 
-<img width="412" height="156" alt="image" src="https://github.com/user-attachments/assets/81a8f570-3da4-4dfa-8754-7cb3f24eb080" />
+<img width="412" height="206" alt="image" src="https://github.com/user-attachments/assets/81a8f570-3da4-4dfa-8754-7cb3f24eb080" />
 
 
 # Projekt A, 2. Semester - PB Webudvikling
