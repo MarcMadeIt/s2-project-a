@@ -6,6 +6,14 @@
 
 Et fullstack-projekt med en **Vue 3**-klient og en **Express**-server.
 
+## Funktioner
+- Opret bruger (register)
+- Login / logout
+- Validering af formularer
+- Password hashing
+- Rate limiting på login/register
+- Simpel lagring af brugere
+
 
 ## Krav
 
