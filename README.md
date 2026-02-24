@@ -2,6 +2,7 @@
 
 Et fullstack-projekt med en **Vue 3**-klient og en **Express**-server.
 
+
 ## Krav
 
 - Node.js `>=20.19.0` eller `>=22.12.0`
@@ -34,6 +35,8 @@ npm run dev
 Klienten starter på `http://localhost:5173`.
 
 ---
+
+(Bemærk: .env-filen er inkluderet i projektet udelukkende til undervisningsbrug. Den indeholder ingen følsomme eller produktionskritiske oplysninger.)
 
 ## Test af projektet
 
