@@ -1,4 +1,4 @@
-# Projekt A - Semester 2 - PB Webudvikling
+# Projekt A, 2. Semester - PB Webudvikling
 
 Et fullstack-projekt med en **Vue 3**-klient og en **Express**-server.
 
