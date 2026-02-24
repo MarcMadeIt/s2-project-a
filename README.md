@@ -1,3 +1,9 @@
+
+<img width="512" height="256" alt="image" src="https://github.com/user-attachments/assets/81a8f570-3da4-4dfa-8754-7cb3f24eb080" />
+
+<img width="800" height="490" alt="image" src="https://github.com/user-attachments/assets/1d38ab9c-f210-4646-baad-14d781c4528d" />
+
+
 # Projekt A, 2. Semester - PB Webudvikling
 
 Et fullstack-projekt med en **Vue 3**-klient og en **Express**-server.
