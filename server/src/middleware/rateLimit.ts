@@ -15,3 +15,5 @@ export const authLimiter = rateLimit({
   standardHeaders: true,
   legacyHeaders: false,
 });
+
+export const loginLimiter = authLimiter;

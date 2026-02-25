@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import { generalLimiter, authLimiter } from "./middleware/rateLimit";
+import { generalLimiter } from "./middleware/rateLimit";
 import authRoutes from "./routes/auth";
 
 const app = express();
@@ -21,7 +21,7 @@ app.get("/", (_req, res) => {
   res.json({ message: "Server is running" });
 });
 
-app.use("/auth", authLimiter, authRoutes);
+app.use("/auth", authRoutes);
 
 app.listen(port, () => {
   console.log(`Server listening on http://localhost:${port}`);
