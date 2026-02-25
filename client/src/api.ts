@@ -50,32 +50,43 @@ function setAuth(user: User | null, token: string | null = null) {
   setStoredUser(user)
 }
 
+function normaliseEmail(email: string): string {
+  return email.trim().toLowerCase()
+}
+
 export async function loginRequest(
   email: string,
   password: string,
 ): Promise<{ user: User; token: string }> {
+  const normalisedEmail = normaliseEmail(email)
   const res = await fetch(`${API_BASE}/auth/login`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, password }),
-  })
-
-  const data = await res.json().catch(() => ({}))
-  if (!res.ok) throw new Error(data.error ?? 'Login fejlede')
-  return { user: data.user, token: data.token }
-}
-
-export async function registerRequest(email: string, password: string): Promise<{ user: User }> {
-  const res = await fetch(`${API_BASE}/auth/register`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, password }),
+    body: JSON.stringify({ email: normalisedEmail, password }),
   })
 
   const data = await res.json().catch(() => ({}))
   if (!res.ok) {
     const msg =
-      data?.error || (res.status === 429 ? 'For mange forsøg – prøv om et minut' : 'Registrering fejlede')
+      data?.error ?? (res.status === 401 ? 'Ugyldig email eller password.' : 'Login fejlede')
+    throw new Error(msg)
+  }
+  return { user: data.user, token: data.token }
+}
+
+export async function registerRequest(email: string, password: string): Promise<{ user: User }> {
+  const normalisedEmail = normaliseEmail(email)
+  const res = await fetch(`${API_BASE}/auth/register`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: normalisedEmail, password }),
+  })
+
+  const data = await res.json().catch(() => ({}))
+  if (!res.ok) {
+    const msg =
+      data?.error ||
+      (res.status === 429 ? 'For mange forsøg – prøv om et minut' : 'Registrering fejlede')
     throw new Error(msg)
   }
   return { user: data.user }
