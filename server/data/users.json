@@ -4,5 +4,11 @@
     "email": "test@test.dk",
     "passwordHash": "$2b$10$oCoC8N65v/zk4qvbJdT3v.jmxlq6.DfQmwh4MM5L1BMyON/rfS356",
     "createdAt": "2026-02-24T12:50:17.614Z"
+  },
+  {
+    "id": "e184e261-87b1-43e8-ac40-555c9dbfa8f0",
+    "email": "test2@test.dk",
+    "passwordHash": "$2b$10$wmhc1Y6r5i0qIPYllVmzM.Z4Tm4Jxxf1IoNRPtTeqWDqbJJYqicc2",
+    "createdAt": "2026-03-05T12:44:35.103Z"
   }
 ]
